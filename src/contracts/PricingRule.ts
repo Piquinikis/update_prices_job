@@ -4,5 +4,5 @@ export type Pricing = {
 }
 
 export default interface IPricingRule {
-    update(current: Pricing): Pricing
+    update(current: Pricing): Pricing;
 }
