@@ -7,8 +7,15 @@ import { FULL_COVERAGE, MEGA_COVERAGE, SPECIAL_FULL_COVERAGE, SUPER_SALE } from 
 import LowCoverage from "./LowCoverage";
 
 export class RuleFactory {
+    snakeCase(name: string): string {
+        return name.replace(/\W+/g, " ")
+            .split(/ |\B(?=[A-Z])/)
+            .map(word => word.toLowerCase())
+            .join('_');
+    };
+    
     getRuleFor(productName: string): IPricingRule {
-        switch (productName) {
+        switch (this.snakeCase(productName)) {
             case FULL_COVERAGE:
                 return new FullCoverage();
             case MEGA_COVERAGE:

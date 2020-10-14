@@ -8,7 +8,7 @@ export default class CarInsurance implements ICarInsurance {
         this.products = products;
     }
 
-    updatePrice(): IProduct[] {
+    updatePrices(): IProduct[] {
         return this.products.map((p: IProduct) => p.refreshPrice());
     }
 }
