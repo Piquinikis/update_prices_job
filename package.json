@@ -6,10 +6,10 @@
     "build": "rm -rf dist && tsc",
     "start": "npm run build && node dist/job.js",
     "start:dev": "nodemon",
-    "test-cov": "istanbul cover --include-all-sources --dir ./dist/coverage node_modules/mocha/bin/_mocha -- dist/tests/**/*.spec.js -R spec --bail",
-    "test-remap": "remap-istanbul -i dist/coverage/coverage.json -o coverage -t html",
+    "test-cov": "istanbul cover --include-all-sources --dir ./coverage node_modules/mocha/bin/_mocha -- dist/tests/**/*.spec.js -R spec --bail",
+    "test-remap": "remap-istanbul -i ./coverage/coverage.json -o coverage -t html",
     "test": "npm run build && npm run test-cov && npm run test-remap",
-    "after-30-days": ""
+    "after-30-days": "npm run build && ts-node __command__/index.ts 30"
   },
   "devDependencies": {
     "@types/chai": "^4.2.12",

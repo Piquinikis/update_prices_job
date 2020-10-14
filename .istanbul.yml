@@ -1,0 +1,6 @@
+verbose: false
+instrumentation:
+  root: .
+  default-excludes: true
+  include-all-sources: true
+  excludes: ['*-spec.js', '**/__mocks__/**', '**/__command__/**']
